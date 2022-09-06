@@ -1,8 +1,14 @@
+
+  <h1 style="text-align: center;float: left;width: 100%;">Listado de pokemon</h1>
+
+
 <div class="card" style="width: 22.5%;float: left;margin-left: 2%;margin-bottom: 2%;" *ngFor="let p of data">
     <img class="card-img-top" src="{{p.image}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title" style="text-align: center;">{{p.name}}</h5>
-      <p># de pokedex: {{p.position}}</p>
-      <a href="detail/{{p.position}}">Detalles</a>
+      <h2 class="card-title" style="text-align: center;">{{p.name}}</h2>
+      <div>
+        <p style="float: left;line-height: 40px;">Numero de pokedex: {{p.position}}</p>
+        <a href="detail/{{p.position}}" style="float: right;" type="button" class="btn btn-warning">Detalles</a>
+      </div>
     </div>
   </div>
