@@ -1,8 +1,9 @@
 
   <h1 style="text-align: center;float: left;width: 100%;">Listado de pokemon</h1>
 
-
-<div class="card" style="width: 22.5%;float: left;margin-left: 2%;margin-bottom: 2%;" *ngFor="let p of data">
+<input type="text" class="form-control" placeholder="Buscar..." style="margin-left: 2%;width: 96%;" [(ngModel)]="filterPoke">
+<br><br>
+<div class="card" style="width: 22.5%;float: left;margin-left: 2%;margin-bottom: 2%;" *ngFor="let p of data | filter:filterPoke | paginate: { itemsPerPage: 16, currentPage: pages }">
     <img class="card-img-top" src="{{p.image}}" alt="Card image cap">
     <div class="card-body">
       <h2 class="card-title" style="text-align: center;">{{p.name}}</h2>
@@ -12,3 +13,7 @@
       </div>
     </div>
   </div>
+  
+<div style="float: left;width: 100%;">
+  <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+</div>

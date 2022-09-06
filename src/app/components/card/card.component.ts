@@ -7,12 +7,9 @@ import { PokeService } from 'src/app/services/poke.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
-
   data: any[] = [];
-
-
-
+  filterPoke: any = '';
+  pages: number = 1;
 
   constructor(private pokeservice: PokeService) { }
 
@@ -22,7 +19,7 @@ export class CardComponent implements OnInit {
 
   getPokemon(){
     let info;
-    for (let index = 1; index < 150; index++) {
+    for (let index = 1; index < 550; index++) {
 
       this.pokeservice.getpolemon(index).subscribe(res => {
         info = {
