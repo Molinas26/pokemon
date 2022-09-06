@@ -1,5 +1,5 @@
-import { PokeService } from './services/poke.service';
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -7,17 +7,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'pokemon';
-
-  constructor(private pokeservicee: PokeService){
-    console.log("Se ha iniciado el proceso");
-  }
-
-  ngOnInit(): void {
-    console.log("OnInit funciona bien");
-    this.pokeservicee.getPoke();
-  }
 
 }
 

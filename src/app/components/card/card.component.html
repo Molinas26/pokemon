@@ -1,0 +1,8 @@
+<div class="card" style="width: 22.5%;float: left;margin-left: 2%;margin-bottom: 2%;" *ngFor="let p of data">
+    <img class="card-img-top" src="{{p.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;">{{p.name}}</h5>
+      <p># de pokedex: {{p.position}}</p>
+      <a href="detail/{{p.position}}">Detalles</a>
+    </div>
+  </div>
